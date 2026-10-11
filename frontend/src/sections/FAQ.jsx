@@ -27,9 +27,9 @@ const faqs = [
       'The supplied business information states that an Industrial Training and Internship Certificate is provided after completion of the training.',
   },
   {
-    question: 'How can I enquire about a training plan?',
+    question: 'How can I enquire about course fees, syllabus, or enrollment?',
     answer:
-      'Use the enquiry form below or contact the training team directly using the phone number or email provided on this website.',
+      'Use the enquiry form below or contact our training team directly via phone (+91 95886 99836) or email (training.support@iamcybersoldier.com). We will provide comprehensive course syllabi, fee structures, and batch timings.',
   },
 ]
 

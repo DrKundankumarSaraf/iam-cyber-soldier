@@ -1,16 +1,58 @@
-# React + Vite
+# I AM CYBER SOLDIER
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Cyber Security Industrial Training & Internship platform with hands-on practical learning.
 
-Currently, two official plugins are available:
+## Project Structure
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+```text
+iam-cyber-soldier/
+├── frontend/          # React + Vite + Tailwind CSS frontend
+│   ├── public/        # Static assets and syllabi documents
+│   ├── src/           # React source code
+│   ├── scripts/       # Utility scripts (DOCX → PDF conversion)
+│   └── ...
+├── backend/           # Node.js + Express API server
+│   ├── config/        # Database configuration
+│   └── ...
+└── *.docx             # Course content source documents
+```
 
-## React Compiler
+## Getting Started
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Frontend
 
-## Expanding the ESLint configuration
+```bash
+cd frontend
+npm install
+npm run dev        # Starts on http://localhost:5173
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Backend
+
+```bash
+cd backend
+npm install
+npm run dev        # Starts on http://localhost:5000 (Node --watch)
+npm start          # Starts without watch mode
+```
+
+### Environment Variables
+
+Copy `backend/.env.example` to `backend/.env` and fill in the values:
+
+```bash
+cp backend/.env.example backend/.env
+```
+
+| Variable | Description |
+|---|---|
+| `PORT` | Backend server port (default: `5000`) |
+| `CLIENT_URL` | Frontend origin for CORS (default: `http://localhost:5173`) |
+| `MONGODB_URI` | MongoDB Atlas connection string (optional for local dev) |
+| `JWT_SECRET` | Secret key for JSON Web Tokens |
+
+## Tech Stack
+
+- **Frontend:** React 19, Vite 8, Tailwind CSS 4
+- **Backend:** Node.js, Express 5, Mongoose
+- **Database:** MongoDB Atlas (optional for local development)

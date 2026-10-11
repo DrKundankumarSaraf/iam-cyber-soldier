@@ -199,6 +199,14 @@ function Footer() {
               </li>
               <li>
                 <a
+                  href="#programs"
+                  className="text-slate-600 transition hover:text-cyan-600 dark:text-slate-400 dark:hover:text-cyan-400"
+                >
+                  Programs
+                </a>
+              </li>
+              <li>
+                <a
                   href="#red-blue"
                   className="text-slate-600 transition hover:text-cyan-600 dark:text-slate-400 dark:hover:text-cyan-400"
                 >
@@ -227,6 +235,14 @@ function Footer() {
                   className="text-slate-600 transition hover:text-cyan-600 dark:text-slate-400 dark:hover:text-cyan-400"
                 >
                   FAQ
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#contact"
+                  className="text-slate-600 transition hover:text-cyan-600 dark:text-slate-400 dark:hover:text-cyan-400"
+                >
+                  Contact &amp; Enquiry
                 </a>
               </li>
             </ul>

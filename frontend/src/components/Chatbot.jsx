@@ -26,15 +26,23 @@ function Chatbot() {
       text.includes('program') ||
       text.includes('course')
     ) {
-      return 'We offer Certified Ethical Hacker, Splunk Admin & Developer, SOC Analyst 1, SOC Analyst 2, CompTIA Security+, and AI-Driven Cyber Security.'
+      return 'We offer 8 industrial cybersecurity programs: Cybersecurity Fundamentals (30h), Certified Ethical Hacking & AI Professional (60h), AI Cybersecurity (60h), Microsoft Defender & Sentinel (60h), Advanced Splunk Admin & Developer (90h), Advanced Splunk Enterprise Security (90h), Advanced Cyber Security & Defense (90h), and Certified Ethical Hacking & AI Expert (120h).'
+    }
+
+    if (
+      text.includes('syllabus') ||
+      text.includes('curriculum')
+    ) {
+      return 'You can download the official PDF and DOCX syllabi for all 8 courses directly in the Training Programs section, or submit an enquiry to receive detailed module outlines.'
     }
 
     if (
       text.includes('price') ||
       text.includes('fee') ||
-      text.includes('cost')
+      text.includes('cost') ||
+      text.includes('plan')
     ) {
-      return 'Our training plans are Basic ₹10,000 for 1 month, Advanced ₹20,000 for 3 months, and Expert ₹40,000 for 6 months.'
+      return 'Our 4 training plans are: Basic (30 Hours) at ₹10,000, Professional (60 Hours) at ₹20,000, Advanced (90 Hours) at ₹30,000, and Expert (120 Hours) at ₹40,000. You can choose your path in the Training Plans section or enquire directly.'
     }
 
     if (
@@ -238,7 +246,7 @@ function Chatbot() {
 
                 <p className="mt-1.5">
                   I can help you with our cybersecurity programs,
-                  training plans, fees, eligibility and enquiries.
+                  course curricula, fees, eligibility and enquiries.
                 </p>
               </div>
             </div>

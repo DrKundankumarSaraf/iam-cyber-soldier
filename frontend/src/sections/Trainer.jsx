@@ -1,3 +1,5 @@
+import trainerImage from '../assets/trainer image.jpg'
+
 function Trainer() {
   const expertise = [
     'SOC & SIEM Operations',
@@ -27,34 +29,36 @@ function Trainer() {
               {/* Subtle back ambient glow */}
               <div className="absolute -inset-2 rounded-3xl bg-linear-to-r from-cyan-500/20 via-blue-500/15 to-transparent blur-xl opacity-80 dark:opacity-40" />
 
-              <div className="relative overflow-hidden rounded-3xl border border-slate-200 bg-slate-50 p-6 shadow-xl dark:border-cyan-500/20 dark:bg-[#0a0f16]">
-                {/* Visual Avatar Emblem & Verified Status */}
-                <div className="relative flex aspect-4/3 flex-col items-center justify-center rounded-2xl border border-slate-200 bg-white p-6 shadow-xs dark:border-white/10 dark:bg-[#05070a]">
-                  <div
-                    role="img"
-                    aria-label="Ankita Saraf - Cyber Security Trainer Monogram"
-                    className="relative flex h-24 w-24 items-center justify-center rounded-2xl border-2 border-cyan-500/40 bg-linear-to-br from-cyan-500/10 via-blue-600/10 to-transparent shadow-[0_0_25px_rgba(34,211,238,0.2)] transition-transform duration-300 hover:scale-105"
-                  >
-                    <span className="font-mono text-3xl font-black text-cyan-700 dark:text-cyan-400">
-                      AS
-                    </span>
-                    <span className="absolute -bottom-2 -right-2 flex h-7 w-7 items-center justify-center rounded-full bg-emerald-500 text-white shadow-md">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 20 20"
-                        fill="currentColor"
-                        className="h-4 w-4"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
-                          clipRule="evenodd"
-                        />
-                      </svg>
-                    </span>
-                  </div>
+              <div className="relative overflow-hidden rounded-3xl border border-slate-200 bg-white p-6 shadow-xl dark:border-cyan-500/20 dark:bg-[#0a0f16]">
+                {/* Trainer Photo & Verified Status */}
+                <div className="relative overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-xs dark:border-white/10 dark:bg-[#05070a]">
+                  <img
+                    src={trainerImage}
+                    alt="Ankita Saraf - Cybersecurity Trainer"
+                    className="aspect-4/3 w-full object-cover object-top"
+                    loading="lazy"
+                  />
+                  {/* Verified badge */}
+                  <span className="absolute bottom-3 right-3 flex h-8 w-8 items-center justify-center rounded-full bg-emerald-500 text-white shadow-lg ring-2 ring-white dark:ring-[#05070a]">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      className="h-4 w-4"
+                      aria-hidden="true"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                  </span>
+                </div>
 
-                  <p className="mt-4 text-base font-extrabold text-slate-950 dark:text-white">
+                {/* Name & Title below the photo */}
+                <div className="mt-4 flex flex-col items-center text-center">
+                  <p className="text-base font-extrabold text-slate-950 dark:text-white">
                     Ankita Saraf
                   </p>
 

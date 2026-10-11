@@ -217,4 +217,22 @@ img {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+/* Dropdown styling for both modes */
+select {
+  background-color: #FFFFFF;
+  color: #111827;
+  color-scheme: light dark;
+}
+.dark select {
+  background-color: #111827;
+  color: #F9FAFB;
+}
+select option {
+  background-color: #FFFFFF;
+  color: #111827;
+}
+.dark select option {
+  background-color: #111827;
+  color: #F9FAFB;
+}
 }

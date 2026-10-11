@@ -1,7 +1,7 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import ProgramSelect from '../components/ProgramSelect'
 
 function Contact({ selectedProgram }) {
-  const [prevProgram, setPrevProgram] = useState(selectedProgram)
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -9,20 +9,37 @@ function Contact({ selectedProgram }) {
     program: selectedProgram?.name || '',
     message: '',
   })
+
   const [submitted, setSubmitted] = useState(false)
   const [errorMsg, setErrorMsg] = useState('')
 
-  if (selectedProgram !== prevProgram) {
-    setPrevProgram(selectedProgram)
+  useEffect(() => {
     if (selectedProgram?.name) {
-      setFormData((prev) => ({ ...prev, program: selectedProgram.name }))
+      setFormData((prev) => ({
+        ...prev,
+        program: selectedProgram.name,
+      }))
       setSubmitted(false)
     }
-  }
+  }, [selectedProgram])
 
   const handleChange = (e) => {
     const { name, value } = e.target
-    setFormData((prev) => ({ ...prev, [name]: value }))
+
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }))
+
+    if (errorMsg) setErrorMsg('')
+  }
+
+  const handleProgramSelect = (value) => {
+    setFormData((prev) => ({
+      ...prev,
+      program: value,
+    }))
+
     if (errorMsg) setErrorMsg('')
   }
 
@@ -34,22 +51,28 @@ function Contact({ selectedProgram }) {
     const trimmedEmail = formData.email.trim()
 
     if (!trimmedName || !trimmedPhone || !trimmedEmail) {
-      setErrorMsg('Please provide your name, phone number, and email address.')
+      setErrorMsg(
+        'Please provide your name, phone number, and email address.'
+      )
       return
     }
 
-    // Standard 10-digit Indian mobile number validation (allowing optional +91, 91, or 0 prefix, spaces, dashes)
     const cleanPhone = trimmedPhone.replace(/[\s\-()]/g, '')
     const phoneRegex = /^(?:\+?91|0)?[6-9]\d{9}$/
+
     if (!phoneRegex.test(cleanPhone)) {
-      setErrorMsg('Please enter a valid 10-digit mobile number (e.g., 98765 43210 or +91 98765 43210).')
+      setErrorMsg(
+        'Please enter a valid 10-digit mobile number (e.g., 98765 43210 or +91 98765 43210).'
+      )
       return
     }
 
-    // Practical email validation checking local part, @, domain, and valid TLD
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
+
     if (!emailRegex.test(trimmedEmail)) {
-      setErrorMsg('Please enter a valid email address (e.g., user@example.com).')
+      setErrorMsg(
+        'Please enter a valid email address (e.g., user@example.com).'
+      )
       return
     }
 
@@ -59,6 +82,8 @@ function Contact({ selectedProgram }) {
 
   const handleReset = () => {
     setSubmitted(false)
+    setErrorMsg('')
+
     setFormData({
       name: '',
       phone: '',
@@ -73,12 +98,12 @@ function Contact({ selectedProgram }) {
       id="contact"
       className="relative overflow-hidden border-t border-slate-200 bg-slate-50/50 py-20 transition-colors duration-300 sm:py-24 dark:border-white/10 dark:bg-[#05070a]"
     >
-      {/* Background cyber ambient glow */}
+      {/* Background glow */}
       <div className="pointer-events-none absolute -bottom-10 left-1/2 h-96 w-96 -translate-x-1/2 rounded-full bg-cyan-500/10 blur-[140px] dark:bg-cyan-500/15" />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid gap-12 lg:grid-cols-12 lg:items-start">
-          {/* Left Column: Direct Contact Information (5 cols) */}
+          {/* Left Column */}
           <div className="lg:col-span-5">
             <div className="inline-flex items-center gap-2 rounded-full border border-cyan-500/20 bg-cyan-500/5 px-3.5 py-1 text-xs font-bold uppercase tracking-[0.25em] text-cyan-700 dark:border-cyan-400/20 dark:bg-cyan-400/10 dark:text-cyan-400">
               Get in Touch
@@ -91,18 +116,18 @@ function Contact({ selectedProgram }) {
               </span>
             </h2>
 
-            <p className="mt-5 max-w-md text-base font-normal leading-relaxed text-slate-600 sm:text-lg dark:text-slate-300">
-              Have questions about program schedules, fees, or industrial curriculum? Reach out directly or submit your enquiry.
+            <p className="mt-5 max-w-md text-base leading-relaxed text-slate-600 sm:text-lg dark:text-slate-300">
+              Have questions about program schedules, fees, or industrial
+              curriculum? Reach out directly or submit your enquiry.
             </p>
 
-            {/* Direct Contact Cards */}
+            {/* Phone and Email */}
             <div className="mt-8 space-y-4">
-              {/* Phone Card */}
               <a
                 href="tel:+919588699836"
-                className="group flex items-center gap-4 rounded-2xl border border-slate-200 bg-white p-4.5 shadow-xs transition-all duration-300 hover:border-cyan-500/50 hover:shadow-md dark:border-white/10 dark:bg-[#0a0f16] dark:hover:border-cyan-400/30 dark:hover:bg-[#0c141d]"
+                className="group flex items-center gap-4 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm transition-all duration-300 hover:border-cyan-500/50 hover:shadow-md dark:border-white/10 dark:bg-[#0a0f16] dark:hover:border-cyan-400/30 dark:hover:bg-[#0c141d]"
               >
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-cyan-500/20 bg-cyan-500/10 text-cyan-700 transition group-hover:scale-105 group-hover:bg-cyan-400 group-hover:text-slate-950 dark:text-cyan-400">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-cyan-500/20 bg-cyan-500/10 text-cyan-700 transition group-hover:bg-cyan-400 group-hover:text-slate-950 dark:text-cyan-400">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
@@ -128,12 +153,11 @@ function Contact({ selectedProgram }) {
                 </div>
               </a>
 
-              {/* Email Card */}
               <a
                 href="mailto:training.support@iamcybersoldier.com"
-                className="group flex items-center gap-4 rounded-2xl border border-slate-200 bg-white p-4.5 shadow-xs transition-all duration-300 hover:border-cyan-500/50 hover:shadow-md dark:border-white/10 dark:bg-[#0a0f16] dark:hover:border-cyan-400/30 dark:hover:bg-[#0c141d]"
+                className="group flex items-center gap-4 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm transition-all duration-300 hover:border-cyan-500/50 hover:shadow-md dark:border-white/10 dark:bg-[#0a0f16] dark:hover:border-cyan-400/30 dark:hover:bg-[#0c141d]"
               >
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-cyan-500/20 bg-cyan-500/10 text-cyan-700 transition group-hover:scale-105 group-hover:bg-cyan-400 group-hover:text-slate-950 dark:text-cyan-400">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-cyan-500/20 bg-cyan-500/10 text-cyan-700 transition group-hover:bg-cyan-400 group-hover:text-slate-950 dark:text-cyan-400">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
@@ -161,8 +185,7 @@ function Contact({ selectedProgram }) {
               </a>
             </div>
 
-            {/* Quick Hours / Focus info */}
-            <div className="mt-6 rounded-2xl border border-slate-200 bg-white/70 p-4 shadow-xs dark:border-white/5 dark:bg-white/[0.02]">
+            <div className="mt-6 rounded-2xl border border-slate-200 bg-white/70 p-4 shadow-sm dark:border-white/5 dark:bg-white/[0.02]">
               <div className="flex items-center gap-2">
                 <span className="h-2 w-2 rounded-full bg-emerald-500" />
                 <span className="font-mono text-xs font-bold text-slate-800 dark:text-slate-200">
@@ -170,12 +193,13 @@ function Contact({ selectedProgram }) {
                 </span>
               </div>
               <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
-                Batches forming regularly for CEH, Splunk, SOC, CompTIA, and AI Security tracks.
+                Batches forming regularly for all 8 industrial cybersecurity
+                tracks.
               </p>
             </div>
           </div>
 
-          {/* Right Column: Enquiry Form (7 cols) */}
+          {/* Right Column: Enquiry Form */}
           <div className="lg:col-span-7">
             <div className="relative rounded-3xl border border-slate-200 bg-white p-6 shadow-xl dark:border-white/10 dark:bg-[#0a0f16] sm:p-8">
               {submitted ? (
@@ -191,6 +215,7 @@ function Contact({ selectedProgram }) {
                       strokeLinecap="round"
                       strokeLinejoin="round"
                       className="h-8 w-8"
+                      aria-hidden="true"
                     >
                       <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
                       <polyline points="22 4 12 14.01 9 11.01" />
@@ -202,8 +227,15 @@ function Contact({ selectedProgram }) {
                   </h3>
 
                   <p className="mx-auto mt-2.5 max-w-md text-sm text-slate-600 dark:text-slate-300">
-                    Thank you, <span className="font-bold text-slate-900 dark:text-white">{formData.name}</span>. For immediate counseling, feel free to call our direct line at{' '}
-                    <a href="tel:+919588699836" className="font-bold text-cyan-600 hover:underline dark:text-cyan-400">
+                    Thank you,{' '}
+                    <span className="font-bold text-slate-900 dark:text-white">
+                      {formData.name}
+                    </span>
+                    . For immediate counseling, call{' '}
+                    <a
+                      href="tel:+919588699836"
+                      className="font-bold text-cyan-600 hover:underline dark:text-cyan-400"
+                    >
                       +91 95886 99836
                     </a>{' '}
                     or email us anytime.
@@ -225,19 +257,26 @@ function Contact({ selectedProgram }) {
                       Send an Enquiry
                     </h3>
                     <p className="mt-1 text-sm text-slate-600 dark:text-slate-400">
-                      Fill out your details to receive course curriculum and enrollment guidance.
+                      Fill out your details to receive course curriculum and
+                      enrollment guidance.
                     </p>
                   </div>
 
                   {errorMsg && (
-                    <div className="mt-4 rounded-xl border border-red-500/20 bg-red-500/10 p-3 text-xs font-medium text-red-600 dark:text-red-400">
+                    <div
+                      role="alert"
+                      className="mt-4 rounded-xl border border-red-500/20 bg-red-500/10 p-3 text-xs font-medium text-red-600 dark:text-red-400"
+                    >
                       {errorMsg}
                     </div>
                   )}
 
-                  <form onSubmit={handleSubmit} noValidate className="mt-6 space-y-4">
+                  <form
+                    onSubmit={handleSubmit}
+                    noValidate
+                    className="mt-6 space-y-4"
+                  >
                     <div className="grid gap-4 sm:grid-cols-2">
-                      {/* Full Name */}
                       <div>
                         <label
                           htmlFor="fullName"
@@ -249,15 +288,15 @@ function Contact({ selectedProgram }) {
                           id="fullName"
                           name="name"
                           type="text"
+                          autoComplete="name"
                           required
                           value={formData.name}
                           onChange={handleChange}
                           placeholder="e.g. John Doe"
-                          className="w-full rounded-xl border border-slate-300 bg-slate-50 px-4 py-3 text-sm text-slate-900 transition outline-none placeholder:text-slate-400 focus:border-cyan-500 focus:bg-white focus:ring-2 focus:ring-cyan-500/20 dark:border-white/10 dark:bg-[#070d14] dark:text-white dark:placeholder:text-slate-600 dark:focus:border-cyan-400"
+                          className="w-full rounded-xl border border-slate-300 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-cyan-500 focus:bg-white focus:ring-2 focus:ring-cyan-500/20 dark:border-white/10 dark:bg-[#070d14] dark:text-white dark:placeholder:text-slate-600 dark:focus:border-cyan-400"
                         />
                       </div>
 
-                      {/* Phone */}
                       <div>
                         <label
                           htmlFor="phone"
@@ -269,16 +308,16 @@ function Contact({ selectedProgram }) {
                           id="phone"
                           name="phone"
                           type="tel"
+                          autoComplete="tel"
                           required
                           value={formData.phone}
                           onChange={handleChange}
                           placeholder="+91 98765 43210"
-                          className="w-full rounded-xl border border-slate-300 bg-slate-50 px-4 py-3 text-sm text-slate-900 transition outline-none placeholder:text-slate-400 focus:border-cyan-500 focus:bg-white focus:ring-2 focus:ring-cyan-500/20 dark:border-white/10 dark:bg-[#070d14] dark:text-white dark:placeholder:text-slate-600 dark:focus:border-cyan-400"
+                          className="w-full rounded-xl border border-slate-300 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-cyan-500 focus:bg-white focus:ring-2 focus:ring-cyan-500/20 dark:border-white/10 dark:bg-[#070d14] dark:text-white dark:placeholder:text-slate-600 dark:focus:border-cyan-400"
                         />
                       </div>
                     </div>
 
-                    {/* Email */}
                     <div>
                       <label
                         htmlFor="email"
@@ -290,15 +329,16 @@ function Contact({ selectedProgram }) {
                         id="email"
                         name="email"
                         type="email"
+                        autoComplete="email"
                         required
                         value={formData.email}
                         onChange={handleChange}
                         placeholder="you@example.com"
-                        className="w-full rounded-xl border border-slate-300 bg-slate-50 px-4 py-3 text-sm text-slate-900 transition outline-none placeholder:text-slate-400 focus:border-cyan-500 focus:bg-white focus:ring-2 focus:ring-cyan-500/20 dark:border-white/10 dark:bg-[#070d14] dark:text-white dark:placeholder:text-slate-600 dark:focus:border-cyan-400"
+                        className="w-full rounded-xl border border-slate-300 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-cyan-500 focus:bg-white focus:ring-2 focus:ring-cyan-500/20 dark:border-white/10 dark:bg-[#070d14] dark:text-white dark:placeholder:text-slate-600 dark:focus:border-cyan-400"
                       />
                     </div>
 
-                    {/* Program Select */}
+                    {/* Program of Interest */}
                     <div>
                       <label
                         htmlFor="program"
@@ -306,46 +346,35 @@ function Contact({ selectedProgram }) {
                       >
                         Program of Interest
                       </label>
-                      <select
-                        id="program"
-                        name="program"
-                        value={formData.program}
-                        onChange={handleChange}
-                        className="w-full rounded-xl border border-slate-300 bg-slate-50 px-4 py-3 text-sm text-slate-900 transition outline-none focus:border-cyan-500 focus:bg-white focus:ring-2 focus:ring-cyan-500/20 dark:border-white/10 dark:bg-[#070d14] dark:text-white dark:focus:border-cyan-400"
-                      >
-                        <option value="">Select a Cybersecurity Program (Optional)</option>
-                        <option value="Certified Ethical Hacker">Certified Ethical Hacker</option>
-                        <option value="Splunk Admin & Developer">Splunk Admin &amp; Developer</option>
-                        <option value="SOC Analyst 1">SOC Analyst 1</option>
-                        <option value="SOC Analyst 2">SOC Analyst 2</option>
-                        <option value="CompTIA Security+">CompTIA Security+</option>
-                        <option value="AI-Driven Cyber Security">AI-Driven Cyber Security</option>
-                      </select>
+
+                      <ProgramSelect
+                        selected={formData.program}
+                        onSelect={handleProgramSelect}
+                        placeholder="Select a Cybersecurity Program or Plan (Optional)"
+                      />
                     </div>
 
-                    {/* Message */}
                     <div>
                       <label
                         htmlFor="message"
                         className="mb-1.5 block text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300"
                       >
-                        Message / Learning Goals
+                        Message / Enquiry Details
                       </label>
                       <textarea
                         id="message"
                         name="message"
-                        rows="3"
+                        rows={3}
                         value={formData.message}
                         onChange={handleChange}
-                        placeholder="Tell us about your background or questions..."
-                        className="w-full resize-none rounded-xl border border-slate-300 bg-slate-50 px-4 py-3 text-sm text-slate-900 transition outline-none placeholder:text-slate-400 focus:border-cyan-500 focus:bg-white focus:ring-2 focus:ring-cyan-500/20 dark:border-white/10 dark:bg-[#070d14] dark:text-white dark:placeholder:text-slate-600 dark:focus:border-cyan-400"
+                        placeholder="Ask about course fees, syllabus details, batch schedules, or enrollment..."
+                        className="w-full resize-none rounded-xl border border-slate-300 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-cyan-500 focus:bg-white focus:ring-2 focus:ring-cyan-500/20 dark:border-white/10 dark:bg-[#070d14] dark:text-white dark:placeholder:text-slate-600 dark:focus:border-cyan-400"
                       />
                     </div>
 
-                    {/* Submit CTA */}
                     <button
                       type="submit"
-                      className="flex w-full items-center justify-center gap-2 rounded-xl bg-cyan-400 px-6 py-3.5 text-xs font-bold uppercase tracking-wider text-slate-950 transition-all duration-300 hover:bg-cyan-300 hover:shadow-[0_0_20px_rgba(34,211,238,0.35)] active:scale-98 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-cyan-500"
+                      className="flex w-full items-center justify-center gap-2 rounded-xl bg-cyan-400 px-6 py-3.5 text-xs font-bold uppercase tracking-wider text-slate-950 transition-all duration-300 hover:bg-cyan-300 hover:shadow-[0_0_20px_rgba(34,211,238,0.35)] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500"
                     >
                       <span>Send Enquiry</span>
                       <svg
@@ -364,7 +393,8 @@ function Contact({ selectedProgram }) {
                     </button>
 
                     <p className="text-center text-[11px] text-slate-500 dark:text-slate-400">
-                      Your privacy is protected. Direct training consultation only.
+                      Your privacy is protected. Direct training consultation
+                      only.
                     </p>
                   </form>
                 </>

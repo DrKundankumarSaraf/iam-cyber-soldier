@@ -29,7 +29,7 @@ function App() {
         <Programs onSelectProgram={handleSelectProgram} />
         <RedBlue />
         <PracticalTraining />
-        <TrainingPlans />
+        <TrainingPlans onSelectPlan={handleSelectProgram} />
         <Trainer />
         <WhoCanJoin />
         <FAQ />
