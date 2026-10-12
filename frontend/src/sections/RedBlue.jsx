@@ -27,7 +27,7 @@ function RedBlue() {
             Offensive + Defensive Security
           </div>
 
-          <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-slate-950 sm:text-4xl lg:text-5xl dark:text-white">
+          <h2 className="mt-4 text-2xl min-[380px]:text-3xl font-extrabold tracking-tight text-slate-950 sm:text-4xl lg:text-5xl dark:text-white">
             Think Like an Attacker.{' '}
             <span className="block text-cyan-600 dark:text-cyan-400">
               Defend Like a Security Professional.
@@ -40,12 +40,12 @@ function RedBlue() {
         </div>
 
         {/* Red Team vs Blue Team Dual Grid */}
-        <div className="mt-14 grid gap-8 lg:grid-cols-2">
+        <div className="mt-10 sm:mt-14 grid gap-6 sm:gap-8 lg:grid-cols-2">
           {/* RED TEAM: Offensive Security */}
-          <div className="group relative overflow-hidden rounded-3xl border border-red-500/20 bg-linear-to-b from-red-500/5 to-transparent p-5 sm:p-9 shadow-xs transition-all duration-300 hover:border-red-500/35 hover:-translate-y-0.5 hover:shadow-lg dark:border-red-500/20 dark:from-red-950/20 dark:to-[#080b10] dark:hover:border-red-500/30">
-            <div className="flex items-center justify-between">
+          <div className="group relative overflow-hidden rounded-3xl border border-red-500/20 bg-linear-to-b from-red-500/5 to-transparent p-4 min-[380px]:p-6 sm:p-9 shadow-xs transition-all duration-300 hover:border-red-500/35 hover:-translate-y-0.5 hover:shadow-lg dark:border-red-500/20 dark:from-red-950/20 dark:to-[#080b10] dark:hover:border-red-500/30">
+            <div className="flex flex-wrap items-center justify-between gap-2">
               {/* Icon */}
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-red-500/30 bg-red-500/10 text-red-500 transition-transform duration-300 group-hover:scale-105 dark:text-red-400">
+              <div className="flex h-11 w-11 sm:h-12 sm:w-12 items-center justify-center rounded-xl border border-red-500/30 bg-red-500/10 text-red-500 transition-transform duration-300 group-hover:scale-105 dark:text-red-400">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
@@ -114,10 +114,10 @@ function RedBlue() {
           </div>
 
           {/* BLUE TEAM: Defensive Operations */}
-          <div className="group relative overflow-hidden rounded-3xl border border-cyan-500/20 bg-linear-to-b from-cyan-500/5 to-transparent p-5 sm:p-9 shadow-xs transition-all duration-300 hover:border-cyan-500/35 hover:-translate-y-0.5 hover:shadow-lg dark:border-cyan-500/20 dark:from-cyan-950/20 dark:to-[#080b10] dark:hover:border-cyan-500/30">
-            <div className="flex items-center justify-between">
+          <div className="group relative overflow-hidden rounded-3xl border border-cyan-500/20 bg-linear-to-b from-cyan-500/5 to-transparent p-4 min-[380px]:p-6 sm:p-9 shadow-xs transition-all duration-300 hover:border-cyan-500/35 hover:-translate-y-0.5 hover:shadow-lg dark:border-cyan-500/20 dark:from-cyan-950/20 dark:to-[#080b10] dark:hover:border-cyan-500/30">
+            <div className="flex flex-wrap items-center justify-between gap-2">
               {/* Icon */}
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-cyan-500/30 bg-cyan-500/10 text-cyan-600 transition-transform duration-300 group-hover:scale-105 dark:text-cyan-400">
+              <div className="flex h-11 w-11 sm:h-12 sm:w-12 items-center justify-center rounded-xl border border-cyan-500/30 bg-cyan-500/10 text-cyan-600 transition-transform duration-300 group-hover:scale-105 dark:text-cyan-400">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
@@ -142,7 +142,7 @@ function RedBlue() {
               </div>
             </div>
 
-            <h3 className="mt-6 text-2xl font-extrabold text-slate-950 sm:text-3xl dark:text-white">
+            <h3 className="mt-6 text-xl min-[380px]:text-2xl font-extrabold text-slate-950 sm:text-3xl dark:text-white">
               Blue Team Operations
             </h3>
 

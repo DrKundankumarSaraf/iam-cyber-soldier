@@ -21,10 +21,10 @@ function App() {
   }
 
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-900 transition-colors duration-300 dark:bg-[#05070a] dark:text-slate-100">
+    <div className="min-h-screen overflow-x-hidden bg-slate-50 text-slate-900 transition-colors duration-300 dark:bg-[#05070a] dark:text-slate-100">
       <Navbar />
 
-      <main>
+      <main className="overflow-x-clip">
         <Hero />
         <Programs onSelectProgram={handleSelectProgram} />
         <RedBlue />

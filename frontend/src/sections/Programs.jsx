@@ -252,7 +252,7 @@ function Programs({ onSelectProgram }) {
             Training Programs &amp; Course Curricula
           </div>
 
-          <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-slate-950 sm:text-4xl lg:text-5xl dark:text-white">
+          <h2 className="mt-4 text-2xl min-[380px]:text-3xl font-extrabold tracking-tight text-slate-950 sm:text-4xl lg:text-5xl dark:text-white">
             Explore All 8{' '}
             <span className="text-cyan-600 dark:text-cyan-400">
               Cybersecurity Programs.
@@ -265,7 +265,7 @@ function Programs({ onSelectProgram }) {
         </div>
 
         {/* Programs Grid: Responsive 1, 2, or 4 columns for all 8 courses */}
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-10 sm:mt-12 grid gap-5 sm:gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {courses.map((course) => {
             const isRed = course.tagColor === 'red'
             const isBlue = course.tagColor === 'blue'
@@ -287,11 +287,11 @@ function Programs({ onSelectProgram }) {
             return (
               <article
                 key={course.number}
-                className="group relative flex h-full flex-col justify-between rounded-2xl border border-slate-200 bg-slate-50/70 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-cyan-500/40 hover:bg-white hover:shadow-xl dark:border-white/10 dark:bg-[#0a0f16] dark:hover:border-cyan-400/30 dark:hover:bg-[#0c141d]"
+                className="group relative flex h-full flex-col justify-between rounded-2xl border border-slate-200 bg-slate-50/70 p-4 min-[380px]:p-5 sm:p-6 transition-all duration-300 hover:-translate-y-1 hover:border-cyan-500/40 hover:bg-white hover:shadow-xl dark:border-white/10 dark:bg-[#0a0f16] dark:hover:border-cyan-400/30 dark:hover:bg-[#0c141d]"
               >
                 <div>
                   {/* Top Bar: Number + Track Tag + Duration */}
-                  <div className="flex items-center justify-between gap-2">
+                  <div className="flex flex-wrap items-center justify-between gap-1.5 sm:gap-2">
                     <span className="font-mono text-xs font-semibold text-slate-500 dark:text-slate-400">
                       /{course.number}
                     </span>

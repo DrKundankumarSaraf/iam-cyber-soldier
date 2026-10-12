@@ -52,7 +52,7 @@ function FAQ() {
             Frequently Asked Questions
           </div>
 
-          <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-slate-950 sm:text-4xl lg:text-5xl dark:text-white">
+          <h2 className="mt-4 text-2xl min-[380px]:text-3xl font-extrabold tracking-tight text-slate-950 sm:text-4xl lg:text-5xl dark:text-white">
             Questions,{' '}
             <span className="text-cyan-600 dark:text-cyan-400">
               Answered.
@@ -65,7 +65,7 @@ function FAQ() {
         </div>
 
         {/* Accordion List */}
-        <div className="mt-12 space-y-3.5">
+        <div className="mt-10 sm:mt-12 space-y-3 sm:space-y-3.5">
           {faqs.map((faq, index) => {
             const isOpen = openIndex === index
             const questionId = `faq-q-${index}`
@@ -86,15 +86,15 @@ function FAQ() {
                   aria-expanded={isOpen}
                   aria-controls={answerId}
                   onClick={() => toggleAccordion(index)}
-                  className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left transition-colors focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-cyan-500 rounded-xl"
+                  className="flex w-full items-center justify-between gap-3 sm:gap-4 px-4 sm:px-6 py-4 sm:py-5 text-left transition-colors focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-cyan-500 rounded-xl"
                 >
-                  <span className="text-base font-bold tracking-tight text-slate-900 transition-colors sm:text-lg dark:text-white">
+                  <span className="text-sm min-[380px]:text-base font-bold tracking-tight text-slate-900 transition-colors sm:text-lg dark:text-white">
                     {faq.question}
                   </span>
 
                   {/* Clean SVG Expand/Collapse Icon */}
                   <span
-                    className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border transition-all duration-300 ${
+                    className={`flex h-7 w-7 sm:h-8 sm:w-8 shrink-0 items-center justify-center rounded-lg border transition-all duration-300 ${
                       isOpen
                         ? 'border-cyan-500/40 bg-cyan-500/10 text-cyan-700 rotate-180 dark:text-cyan-400'
                         : 'border-slate-200 bg-slate-50 text-slate-500 dark:border-white/10 dark:bg-white/5 dark:text-slate-400'
@@ -125,8 +125,8 @@ function FAQ() {
                   }`}
                 >
                   <div className="overflow-hidden">
-                    <div className="border-t border-slate-200/80 px-6 py-4.5 dark:border-white/10">
-                      <p className="text-sm font-normal leading-relaxed text-slate-700 dark:text-slate-300">
+                    <div className="border-t border-slate-200/80 px-4 sm:px-6 py-3.5 sm:py-4.5 dark:border-white/10">
+                      <p className="text-xs min-[380px]:text-sm font-normal leading-relaxed text-slate-700 dark:text-slate-300">
                         {faq.answer}
                       </p>
                     </div>

@@ -112,7 +112,7 @@ function TrainingPlans({ onSelectPlan }) {
             Training Plans &amp; Pricing
           </div>
 
-          <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-slate-950 sm:text-4xl lg:text-5xl dark:text-white">
+          <h2 className="mt-4 text-2xl min-[380px]:text-3xl font-extrabold tracking-tight text-slate-950 sm:text-4xl lg:text-5xl dark:text-white">
             Choose Your{' '}
             <span className="text-cyan-600 dark:text-cyan-400">
               Learning Path.
@@ -125,11 +125,11 @@ function TrainingPlans({ onSelectPlan }) {
         </div>
 
         {/* Pricing Cards Grid - 4 Columns Responsive */}
-        <div className="mt-14 grid items-stretch gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-10 sm:mt-14 grid items-stretch gap-5 sm:gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {plans.map((plan) => (
             <article
               key={plan.name}
-              className={`relative flex flex-col justify-between rounded-3xl p-6 transition-all duration-300 hover:-translate-y-1 sm:p-6 lg:p-5 xl:p-6 ${
+              className={`relative flex flex-col justify-between rounded-2xl sm:rounded-3xl p-4 min-[380px]:p-5 sm:p-6 lg:p-4 xl:p-6 transition-all duration-300 hover:-translate-y-1 ${
                 plan.featured
                   ? 'border-2 border-cyan-400 bg-white shadow-xl hover:shadow-2xl dark:border-cyan-400/80 dark:bg-[#09121a] dark:shadow-[0_0_50px_rgba(34,211,238,0.12)] dark:hover:shadow-[0_0_50px_rgba(34,211,238,0.2)]'
                   : 'border border-slate-200 bg-white shadow-xs hover:border-slate-300 hover:shadow-lg dark:border-white/10 dark:bg-[#0a0f16] dark:hover:border-white/20'
@@ -137,7 +137,7 @@ function TrainingPlans({ onSelectPlan }) {
             >
               {/* Featured Badge */}
               {plan.featured && (
-                <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 rounded-full bg-cyan-400 px-3.5 py-1 text-[10px] font-extrabold uppercase tracking-widest text-slate-950 shadow-md">
+                <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 rounded-full bg-cyan-400 px-2.5 sm:px-3.5 py-0.5 sm:py-1 text-[9px] min-[380px]:text-[10px] font-extrabold uppercase tracking-widest text-slate-950 shadow-md">
                   {plan.featuredLabel}
                 </div>
               )}
@@ -170,7 +170,7 @@ function TrainingPlans({ onSelectPlan }) {
                 </div>
 
                 {/* Description */}
-                <p className="mt-3.5 min-h-[56px] text-xs font-normal leading-relaxed text-slate-600 dark:text-slate-300">
+                <p className="mt-3.5 sm:min-h-[56px] text-xs font-normal leading-relaxed text-slate-600 dark:text-slate-300">
                   {plan.description}
                 </p>
 

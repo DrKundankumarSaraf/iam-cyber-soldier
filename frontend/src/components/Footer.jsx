@@ -226,7 +226,7 @@ function Footer() {
                   href="#trainer"
                   className="text-slate-600 transition hover:text-cyan-600 dark:text-slate-400 dark:hover:text-cyan-400"
                 >
-                  Trainer Profile
+                  Founder Profile
                 </a>
               </li>
               <li>
@@ -269,7 +269,7 @@ function Footer() {
               </a>
 
               <p className="pt-2 text-xs text-slate-500">
-                Trainer: Ankita Saraf (Ph.D. Cyber Security)
+                Founder: Ankita Saraf
               </p>
             </div>
           </div>
@@ -278,7 +278,7 @@ function Footer() {
         {/* Bottom Sub-footer */}
         <div className="mt-12 flex flex-col gap-3 border-t border-slate-200 pt-6 text-xs text-slate-500 sm:flex-row sm:items-center sm:justify-between dark:border-white/10 dark:text-slate-500">
           <p>© {currentYear} I AM CYBER SOLDIER. All rights reserved.</p>
-          <div className="flex items-center gap-4">
+          <div className="flex flex-wrap items-center gap-2 sm:gap-4">
             <span>Cyber Security Industrial Training &amp; Internship</span>
             <span>•</span>
             <a href="#home" className="transition-colors duration-200 hover:text-cyan-600 dark:hover:text-cyan-400">

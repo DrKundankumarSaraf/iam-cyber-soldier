@@ -1,7 +1,8 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import ProgramSelect from '../components/ProgramSelect'
 
 function Contact({ selectedProgram }) {
+  const [prevSelectedProgram, setPrevSelectedProgram] = useState(selectedProgram)
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -13,7 +14,8 @@ function Contact({ selectedProgram }) {
   const [submitted, setSubmitted] = useState(false)
   const [errorMsg, setErrorMsg] = useState('')
 
-  useEffect(() => {
+  if (selectedProgram !== prevSelectedProgram) {
+    setPrevSelectedProgram(selectedProgram)
     if (selectedProgram?.name) {
       setFormData((prev) => ({
         ...prev,
@@ -21,7 +23,7 @@ function Contact({ selectedProgram }) {
       }))
       setSubmitted(false)
     }
-  }, [selectedProgram])
+  }
 
   const handleChange = (e) => {
     const { name, value } = e.target
@@ -109,7 +111,7 @@ function Contact({ selectedProgram }) {
               Get in Touch
             </div>
 
-            <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-slate-950 sm:text-4xl lg:text-5xl dark:text-white">
+            <h2 className="mt-4 text-2xl min-[380px]:text-3xl font-extrabold tracking-tight text-slate-950 sm:text-4xl lg:text-5xl dark:text-white">
               Ready to Build{' '}
               <span className="text-cyan-600 dark:text-cyan-400">
                 Real Skills?
@@ -125,9 +127,9 @@ function Contact({ selectedProgram }) {
             <div className="mt-8 space-y-4">
               <a
                 href="tel:+919588699836"
-                className="group flex items-center gap-4 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm transition-all duration-300 hover:border-cyan-500/50 hover:shadow-md dark:border-white/10 dark:bg-[#0a0f16] dark:hover:border-cyan-400/30 dark:hover:bg-[#0c141d]"
+                className="group flex items-center gap-3.5 sm:gap-4 rounded-2xl border border-slate-200 bg-white p-3.5 sm:p-4 shadow-sm transition-all duration-300 hover:border-cyan-500/50 hover:shadow-md dark:border-white/10 dark:bg-[#0a0f16] dark:hover:border-cyan-400/30 dark:hover:bg-[#0c141d]"
               >
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-cyan-500/20 bg-cyan-500/10 text-cyan-700 transition group-hover:bg-cyan-400 group-hover:text-slate-950 dark:text-cyan-400">
+                <div className="flex h-11 w-11 sm:h-12 sm:w-12 shrink-0 items-center justify-center rounded-xl border border-cyan-500/20 bg-cyan-500/10 text-cyan-700 transition group-hover:bg-cyan-400 group-hover:text-slate-950 dark:text-cyan-400">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
@@ -144,10 +146,10 @@ function Contact({ selectedProgram }) {
                 </div>
 
                 <div className="min-w-0">
-                  <p className="font-mono text-[11px] font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">
+                  <p className="font-mono text-[10px] min-[380px]:text-[11px] font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">
                     Direct Call / WhatsApp
                   </p>
-                  <p className="mt-0.5 text-base font-extrabold text-slate-950 transition group-hover:text-cyan-600 dark:text-white dark:group-hover:text-cyan-400">
+                  <p className="mt-0.5 text-sm sm:text-base font-extrabold text-slate-950 transition group-hover:text-cyan-600 dark:text-white dark:group-hover:text-cyan-400">
                     +91 95886 99836
                   </p>
                 </div>
@@ -155,9 +157,9 @@ function Contact({ selectedProgram }) {
 
               <a
                 href="mailto:training.support@iamcybersoldier.com"
-                className="group flex items-center gap-4 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm transition-all duration-300 hover:border-cyan-500/50 hover:shadow-md dark:border-white/10 dark:bg-[#0a0f16] dark:hover:border-cyan-400/30 dark:hover:bg-[#0c141d]"
+                className="group flex items-center gap-3.5 sm:gap-4 rounded-2xl border border-slate-200 bg-white p-3.5 sm:p-4 shadow-sm transition-all duration-300 hover:border-cyan-500/50 hover:shadow-md dark:border-white/10 dark:bg-[#0a0f16] dark:hover:border-cyan-400/30 dark:hover:bg-[#0c141d]"
               >
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-cyan-500/20 bg-cyan-500/10 text-cyan-700 transition group-hover:bg-cyan-400 group-hover:text-slate-950 dark:text-cyan-400">
+                <div className="flex h-11 w-11 sm:h-12 sm:w-12 shrink-0 items-center justify-center rounded-xl border border-cyan-500/20 bg-cyan-500/10 text-cyan-700 transition group-hover:bg-cyan-400 group-hover:text-slate-950 dark:text-cyan-400">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
@@ -175,10 +177,10 @@ function Contact({ selectedProgram }) {
                 </div>
 
                 <div className="min-w-0">
-                  <p className="font-mono text-[11px] font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">
+                  <p className="font-mono text-[10px] min-[380px]:text-[11px] font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">
                     Training Support Email
                   </p>
-                  <p className="mt-0.5 truncate text-sm font-extrabold text-slate-950 transition group-hover:text-cyan-600 dark:text-white dark:group-hover:text-cyan-400">
+                  <p className="mt-0.5 break-all text-xs min-[360px]:text-sm font-extrabold text-slate-950 transition group-hover:text-cyan-600 dark:text-white dark:group-hover:text-cyan-400">
                     training.support@iamcybersoldier.com
                   </p>
                 </div>
@@ -201,7 +203,7 @@ function Contact({ selectedProgram }) {
 
           {/* Right Column: Enquiry Form */}
           <div className="lg:col-span-7">
-            <div className="relative rounded-3xl border border-slate-200 bg-white p-6 shadow-xl dark:border-white/10 dark:bg-[#0a0f16] sm:p-8">
+            <div className="relative rounded-2xl sm:rounded-3xl border border-slate-200 bg-white p-4 min-[380px]:p-6 sm:p-8 shadow-xl dark:border-white/10 dark:bg-[#0a0f16]">
               {submitted ? (
                 /* Success Confirmation State */
                 <div className="py-8 text-center">
@@ -293,7 +295,7 @@ function Contact({ selectedProgram }) {
                           value={formData.name}
                           onChange={handleChange}
                           placeholder="e.g. John Doe"
-                          className="w-full rounded-xl border border-slate-300 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-cyan-500 focus:bg-white focus:ring-2 focus:ring-cyan-500/20 dark:border-white/10 dark:bg-[#070d14] dark:text-white dark:placeholder:text-slate-600 dark:focus:border-cyan-400"
+                          className="w-full rounded-xl border border-slate-300 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition placeholder:text-slate-500 focus:border-cyan-500 focus:bg-white focus:ring-2 focus:ring-cyan-500/20 disabled:cursor-not-allowed disabled:opacity-60 dark:border-white/15 dark:bg-[#070d14] dark:text-white dark:placeholder:text-slate-400 dark:focus:border-cyan-400 dark:focus:bg-[#0a121d] dark:focus:ring-2 dark:focus:ring-cyan-400/20"
                         />
                       </div>
 
@@ -313,7 +315,7 @@ function Contact({ selectedProgram }) {
                           value={formData.phone}
                           onChange={handleChange}
                           placeholder="+91 98765 43210"
-                          className="w-full rounded-xl border border-slate-300 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-cyan-500 focus:bg-white focus:ring-2 focus:ring-cyan-500/20 dark:border-white/10 dark:bg-[#070d14] dark:text-white dark:placeholder:text-slate-600 dark:focus:border-cyan-400"
+                          className="w-full rounded-xl border border-slate-300 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition placeholder:text-slate-500 focus:border-cyan-500 focus:bg-white focus:ring-2 focus:ring-cyan-500/20 disabled:cursor-not-allowed disabled:opacity-60 dark:border-white/15 dark:bg-[#070d14] dark:text-white dark:placeholder:text-slate-400 dark:focus:border-cyan-400 dark:focus:bg-[#0a121d] dark:focus:ring-2 dark:focus:ring-cyan-400/20"
                         />
                       </div>
                     </div>
@@ -334,7 +336,7 @@ function Contact({ selectedProgram }) {
                         value={formData.email}
                         onChange={handleChange}
                         placeholder="you@example.com"
-                        className="w-full rounded-xl border border-slate-300 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-cyan-500 focus:bg-white focus:ring-2 focus:ring-cyan-500/20 dark:border-white/10 dark:bg-[#070d14] dark:text-white dark:placeholder:text-slate-600 dark:focus:border-cyan-400"
+                        className="w-full rounded-xl border border-slate-300 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition placeholder:text-slate-500 focus:border-cyan-500 focus:bg-white focus:ring-2 focus:ring-cyan-500/20 disabled:cursor-not-allowed disabled:opacity-60 dark:border-white/15 dark:bg-[#070d14] dark:text-white dark:placeholder:text-slate-400 dark:focus:border-cyan-400 dark:focus:bg-[#0a121d] dark:focus:ring-2 dark:focus:ring-cyan-400/20"
                       />
                     </div>
 
@@ -368,7 +370,7 @@ function Contact({ selectedProgram }) {
                         value={formData.message}
                         onChange={handleChange}
                         placeholder="Ask about course fees, syllabus details, batch schedules, or enrollment..."
-                        className="w-full resize-none rounded-xl border border-slate-300 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-cyan-500 focus:bg-white focus:ring-2 focus:ring-cyan-500/20 dark:border-white/10 dark:bg-[#070d14] dark:text-white dark:placeholder:text-slate-600 dark:focus:border-cyan-400"
+                        className="w-full resize-none rounded-xl border border-slate-300 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition placeholder:text-slate-500 focus:border-cyan-500 focus:bg-white focus:ring-2 focus:ring-cyan-500/20 disabled:cursor-not-allowed disabled:opacity-60 dark:border-white/15 dark:bg-[#070d14] dark:text-white dark:placeholder:text-slate-400 dark:focus:border-cyan-400 dark:focus:bg-[#0a121d] dark:focus:ring-2 dark:focus:ring-cyan-400/20"
                       />
                     </div>
 

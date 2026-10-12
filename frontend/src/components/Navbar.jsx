@@ -36,7 +36,7 @@ function Navbar() {
     { name: 'Home', href: '#home' },
     { name: 'Programs', href: '#programs' },
     { name: 'Training Plans', href: '#plans' },
-    { name: 'Trainer', href: '#trainer' },
+    { name: 'Founder', href: '#trainer' },
     { name: 'FAQ', href: '#faq' },
   ]
 
@@ -59,15 +59,15 @@ function Navbar() {
             : 'border-b border-slate-200/50 bg-white/80 backdrop-blur-md dark:border-white/5 dark:bg-[#05070a]/80'
         }`}
       >
-      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-3 min-[400px]:px-4 sm:px-6 lg:px-8">
         {/* Logo + Brand */}
         <a
           href="#home"
           onClick={closeMobileMenu}
-          className="group flex items-center gap-3 transition-transform duration-200 hover:opacity-95"
+          className="group flex items-center gap-2 sm:gap-3 transition-transform duration-200 hover:opacity-95"
           aria-label="I AM CYBER SOLDIER Home"
         >
-          <div className="relative flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-cyan-500/30 bg-[#060c14] p-1 shadow-[0_0_15px_rgba(34,211,238,0.15)] transition-all group-hover:border-cyan-400 group-hover:shadow-[0_0_20px_rgba(34,211,238,0.3)]">
+          <div className="relative flex h-9.5 w-9.5 sm:h-11 sm:w-11 shrink-0 items-center justify-center rounded-xl border border-cyan-500/30 bg-[#060c14] p-1 shadow-[0_0_15px_rgba(34,211,238,0.15)] transition-all group-hover:border-cyan-400 group-hover:shadow-[0_0_20px_rgba(34,211,238,0.3)]">
             <img
               src={logo}
               alt="I AM CYBER SOLDIER Shield Logo"
@@ -78,10 +78,10 @@ function Navbar() {
           </div>
 
           <div className="flex flex-col justify-center leading-tight">
-            <span className="text-sm font-extrabold tracking-wider text-slate-900 transition-colors dark:text-white">
+            <span className="text-xs sm:text-sm font-extrabold tracking-wider text-slate-900 transition-colors dark:text-white">
               I AM CYBER
             </span>
-            <span className="text-[11px] font-bold tracking-[0.22em] text-cyan-600 dark:text-cyan-400">
+            <span className="text-[10px] sm:text-[11px] font-bold tracking-[0.2em] sm:tracking-[0.22em] text-cyan-600 dark:text-cyan-400">
               SOLDIER
             </span>
           </div>
@@ -167,13 +167,13 @@ function Navbar() {
         </div>
 
         {/* Mobile Actions */}
-        <div className="flex items-center gap-2 md:hidden">
+        <div className="flex items-center gap-1.5 sm:gap-2 md:hidden">
           {/* Mobile Theme Toggle */}
           <button
             type="button"
             onClick={toggleTheme}
             aria-label={darkMode ? 'Switch to light mode' : 'Switch to dark mode'}
-            className="flex h-10 w-10 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-700 transition-colors dark:border-white/10 dark:bg-white/[0.05] dark:text-slate-300"
+            className="flex h-9.5 w-9.5 sm:h-10 sm:w-10 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-700 transition-colors dark:border-white/10 dark:bg-white/[0.05] dark:text-slate-300"
           >
             {darkMode ? (
               <svg
@@ -214,7 +214,7 @@ function Navbar() {
             aria-label="Toggle navigation menu"
             aria-expanded={mobileMenuOpen}
             aria-controls="mobile-nav-drawer"
-            className="flex h-10 w-10 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-900 transition-colors active:scale-95 dark:border-white/10 dark:bg-white/[0.05] dark:text-white"
+            className="flex h-9.5 w-9.5 sm:h-10 sm:w-10 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-900 transition-colors active:scale-95 dark:border-white/10 dark:bg-white/[0.05] dark:text-white"
           >
             <div className="flex h-4 w-5 flex-col justify-between">
               <span
@@ -241,7 +241,7 @@ function Navbar() {
       {mobileMenuOpen && (
         <div
           id="mobile-nav-drawer"
-          className="animate-drawer-down border-t border-slate-200 bg-white px-4 pt-3 pb-6 shadow-2xl md:hidden dark:border-white/10 dark:bg-[#060a12]"
+          className="animate-drawer-down max-h-[calc(100dvh-5rem)] overflow-y-auto border-t border-slate-200 bg-white px-4 pt-3 pb-8 shadow-2xl md:hidden dark:border-white/10 dark:bg-[#060a12]"
         >
           <nav className="flex flex-col gap-1">
             {navLinks.map((link) => (

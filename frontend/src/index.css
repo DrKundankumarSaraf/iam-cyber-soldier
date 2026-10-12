@@ -10,11 +10,18 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 5rem;
+  overflow-x: hidden;
+  color-scheme: light;
+}
+
+html.dark {
+  color-scheme: dark;
 }
 
 body {
   margin: 0;
   min-width: 320px;
+  overflow-x: hidden;
   background-color: #f8fafc;
   color: #0f172a;
   font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
@@ -34,13 +41,49 @@ span {
   text-rendering: optimizeLegibility;
 }
 
-/* Better keyboard accessibility */
+/* Form controls and keyboard accessibility */
 button,
 a,
 input,
 textarea,
 select {
   font: inherit;
+}
+
+input,
+textarea {
+  color: inherit;
+}
+
+/* Browser autofill normalization for light and dark themes */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+textarea:-webkit-autofill:active {
+  -webkit-text-fill-color: #0f172a !important;
+  box-shadow: 0 0 0 1000px #f8fafc inset !important;
+  -webkit-box-shadow: 0 0 0 1000px #f8fafc inset !important;
+  transition: background-color 5000s ease-in-out 0s;
+  caret-color: #0f172a;
+}
+
+.dark input:-webkit-autofill,
+.dark input:-webkit-autofill:hover, 
+.dark input:-webkit-autofill:focus,
+.dark input:-webkit-autofill:active,
+.dark textarea:-webkit-autofill,
+.dark textarea:-webkit-autofill:hover,
+.dark textarea:-webkit-autofill:focus,
+.dark textarea:-webkit-autofill:active {
+  -webkit-text-fill-color: #ffffff !important;
+  box-shadow: 0 0 0 1000px #070d14 inset !important;
+  -webkit-box-shadow: 0 0 0 1000px #070d14 inset !important;
+  transition: background-color 5000s ease-in-out 0s;
+  caret-color: #22d3ee;
 }
 
 :focus-visible {
@@ -217,6 +260,8 @@ img {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
 /* Dropdown styling for both modes */
 select {
   background-color: #FFFFFF;
@@ -234,5 +279,4 @@ select option {
 .dark select option {
   background-color: #111827;
   color: #F9FAFB;
-}
 }

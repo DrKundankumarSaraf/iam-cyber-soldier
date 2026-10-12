@@ -153,14 +153,14 @@ function Chatbot() {
       {/* Chat Window */}
       <div
         aria-hidden={!isOpen}
-        className={`fixed bottom-24 right-4 z-[100] w-[calc(100vw-2rem)] max-w-sm origin-bottom-right transition-all duration-300 ease-out sm:right-6 ${
+        className={`fixed bottom-20 right-3 z-[100] w-[calc(100vw-1.5rem)] max-w-sm origin-bottom-right transition-all duration-300 ease-out sm:bottom-24 sm:right-6 sm:w-[calc(100vw-2rem)] ${
           isOpen
             ? 'pointer-events-auto translate-y-0 scale-100 opacity-100'
             : 'pointer-events-none translate-y-4 scale-95 opacity-0'
         }`}
       >
         <div
-          className={`flex max-h-[min(600px,calc(100vh-8rem))] flex-col overflow-hidden rounded-2xl border shadow-2xl ${
+          className={`flex max-h-[min(540px,calc(100dvh-6.5rem))] flex-col overflow-hidden rounded-2xl border shadow-2xl ${
             darkMode
               ? 'border-white/10 bg-[#081016]'
               : 'border-gray-200 bg-white'
@@ -332,7 +332,7 @@ function Chatbot() {
                 placeholder="Ask something..."
                 disabled={isTyping}
                 aria-label="Ask Cyber Soldier AI"
-                className="min-w-0 flex-1 rounded-xl border border-gray-200 bg-gray-50 px-3 py-2.5 text-sm text-gray-900 outline-none placeholder:text-gray-400 transition focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400/20 disabled:cursor-not-allowed disabled:opacity-60 dark:border-white/10 dark:bg-white/5 dark:text-white dark:placeholder:text-gray-600"
+                className="min-w-0 flex-1 rounded-xl border border-slate-300 bg-slate-50 px-3 py-2.5 text-sm text-slate-900 outline-none placeholder:text-slate-500 transition focus:border-cyan-500 focus:bg-white focus:ring-2 focus:ring-cyan-500/20 disabled:cursor-not-allowed disabled:opacity-60 dark:border-white/15 dark:bg-[#070d14] dark:text-white dark:placeholder:text-slate-400 dark:focus:border-cyan-400 dark:focus:bg-[#0a121d] dark:focus:ring-2 dark:focus:ring-cyan-400/20"
               />
 
               <button
@@ -382,7 +382,7 @@ function Chatbot() {
             : 'Open AI chatbot'
         }
         aria-expanded={isOpen}
-        className={`fixed bottom-5 right-5 z-[100] flex h-14 w-14 items-center justify-center rounded-full border transition-all duration-300 sm:right-6 ${
+        className={`fixed bottom-4 right-4 z-[100] flex h-12 w-12 items-center justify-center rounded-full border transition-all duration-300 sm:bottom-5 sm:right-6 sm:h-14 sm:w-14 ${
           isOpen
             ? 'border-cyan-300 bg-cyan-400 text-black shadow-[0_8px_30px_rgba(34,211,238,0.35)]'
             : 'border-cyan-300/30 bg-cyan-400 text-black shadow-[0_8px_35px_rgba(34,211,238,0.35)] hover:scale-110 hover:bg-cyan-300'
@@ -395,7 +395,7 @@ function Chatbot() {
             fill="none"
             stroke="currentColor"
             strokeWidth="2"
-            className="h-6 w-6"
+            className="h-5 w-5 sm:h-6 sm:w-6"
           >
             <path
               strokeLinecap="round"
@@ -410,7 +410,7 @@ function Chatbot() {
             fill="none"
             stroke="currentColor"
             strokeWidth="1.8"
-            className="h-6 w-6"
+            className="h-5 w-5 sm:h-6 sm:w-6"
           >
             <path
               strokeLinecap="round"

@@ -108,7 +108,7 @@ function WhoCanJoin() {
               Eligibility &amp; Audience
             </div>
 
-            <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-slate-950 sm:text-4xl lg:text-5xl dark:text-white">
+            <h2 className="mt-4 text-2xl min-[380px]:text-3xl font-extrabold tracking-tight text-slate-950 sm:text-4xl lg:text-5xl dark:text-white">
               Built for Those Ready to{' '}
               <span className="text-cyan-600 dark:text-cyan-400">
                 Level Up.
@@ -122,11 +122,11 @@ function WhoCanJoin() {
         </div>
 
         {/* 4 Audience Cards */}
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-10 sm:mt-12 grid gap-5 sm:gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {audiences.map((audience) => (
             <article
               key={audience.number}
-              className="group relative flex flex-col justify-between rounded-2xl border border-slate-200 bg-white p-6 shadow-xs transition-all duration-300 hover:-translate-y-1 hover:border-cyan-500/40 hover:shadow-lg dark:border-white/10 dark:bg-[#0a0f16] dark:hover:border-cyan-400/30 dark:hover:bg-[#0c141d]"
+              className="group relative flex flex-col justify-between rounded-2xl border border-slate-200 bg-white p-4 min-[380px]:p-5 sm:p-6 shadow-xs transition-all duration-300 hover:-translate-y-1 hover:border-cyan-500/40 hover:shadow-lg dark:border-white/10 dark:bg-[#0a0f16] dark:hover:border-cyan-400/30 dark:hover:bg-[#0c141d]"
             >
               <div>
                 {/* Header: Number and Role Tag */}
@@ -161,7 +161,7 @@ function WhoCanJoin() {
         {/* Requirements Banner: Basic Knowledge vs Programming Not Mandatory */}
         <div className="mt-8 grid gap-4 sm:grid-cols-2">
           {/* Requirement 1: Basic Computer Knowledge */}
-          <div className="flex items-start gap-4 rounded-2xl border border-cyan-500/30 bg-cyan-500/5 p-5 dark:border-cyan-500/20 dark:bg-cyan-950/10">
+          <div className="flex items-start gap-3.5 sm:gap-4 rounded-2xl border border-cyan-500/30 bg-cyan-500/5 p-4 min-[380px]:p-5 dark:border-cyan-500/20 dark:bg-cyan-950/10">
             <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-cyan-500/15 text-cyan-700 dark:text-cyan-400">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -188,7 +188,7 @@ function WhoCanJoin() {
           </div>
 
           {/* Requirement 2: Programming Not Mandatory */}
-          <div className="flex items-start gap-4 rounded-2xl border border-slate-200 bg-white p-5 shadow-xs dark:border-white/10 dark:bg-[#0a0f16]">
+          <div className="flex items-start gap-3.5 sm:gap-4 rounded-2xl border border-slate-200 bg-white p-4 min-[380px]:p-5 shadow-xs dark:border-white/10 dark:bg-[#0a0f16]">
             <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-slate-100 text-slate-700 dark:bg-white/5 dark:text-slate-300">
               <svg
                 xmlns="http://www.w3.org/2000/svg"

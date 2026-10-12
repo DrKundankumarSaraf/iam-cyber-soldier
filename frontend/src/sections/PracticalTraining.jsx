@@ -107,7 +107,7 @@ function PracticalTraining() {
               Training Methodology
             </div>
 
-            <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-slate-950 sm:text-4xl lg:text-5xl dark:text-white">
+            <h2 className="mt-4 text-2xl min-[380px]:text-3xl font-extrabold tracking-tight text-slate-950 sm:text-4xl lg:text-5xl dark:text-white">
               Learn Less by Watching.{' '}
               <span className="block text-cyan-600 dark:text-cyan-400">
                 Learn More by Doing.
@@ -121,7 +121,7 @@ function PracticalTraining() {
 
           {/* Right Column: 70% Practical / 30% Theory Visual Card (5 cols) */}
           <div className="lg:col-span-5">
-            <div className="relative rounded-2xl border border-slate-200 bg-slate-50 p-6 shadow-sm transition-all duration-300 dark:border-cyan-500/20 dark:bg-[#0c121b]">
+            <div className="relative rounded-2xl border border-slate-200 bg-slate-50 p-4 min-[380px]:p-5 sm:p-6 shadow-sm transition-all duration-300 dark:border-cyan-500/20 dark:bg-[#0c121b]">
               <div className="flex items-center justify-between">
                 <span className="font-mono text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">
                   Instruction Distribution
@@ -132,17 +132,17 @@ function PracticalTraining() {
               </div>
 
               {/* Numbers */}
-              <div className="mt-5 flex items-baseline justify-between">
+              <div className="mt-5 flex flex-wrap items-baseline justify-between gap-2">
                 <div>
-                  <span className="text-4xl font-black text-slate-950 sm:text-5xl dark:text-white">
+                  <span className="text-3xl min-[380px]:text-4xl font-black text-slate-950 sm:text-5xl dark:text-white">
                     70%
                   </span>
-                  <span className="ml-2 text-sm font-bold text-cyan-700 dark:text-cyan-400">
+                  <span className="ml-1.5 min-[380px]:ml-2 text-xs sm:text-sm font-bold text-cyan-700 dark:text-cyan-400">
                     Practical Hands-on
                   </span>
                 </div>
                 <div>
-                  <span className="text-2xl font-bold text-slate-500 dark:text-slate-400">
+                  <span className="text-xl min-[380px]:text-2xl font-bold text-slate-500 dark:text-slate-400">
                     30%
                   </span>
                   <span className="ml-1.5 text-xs font-semibold text-slate-500 dark:text-slate-400">
@@ -160,7 +160,7 @@ function PracticalTraining() {
               </div>
 
               {/* Micro Details */}
-              <div className="mt-4 flex justify-between text-xs font-medium text-slate-600 dark:text-slate-400">
+              <div className="mt-4 flex flex-wrap justify-between gap-1 text-[11px] sm:text-xs font-medium text-slate-600 dark:text-slate-400">
                 <span>Controlled Lab Workflows</span>
                 <span>Foundational Architecture</span>
               </div>
@@ -169,12 +169,12 @@ function PracticalTraining() {
         </div>
 
         {/* 4-Step Process: Learn -> Practice -> Analyze -> Defend */}
-        <div className="mt-16">
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-12 sm:mt-16">
+          <div className="grid gap-5 sm:gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {steps.map((step, idx) => (
               <div
                 key={step.number}
-                className="group relative flex flex-col justify-between rounded-2xl border border-slate-200 bg-slate-50/70 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-cyan-500/40 hover:bg-white hover:shadow-lg dark:border-white/10 dark:bg-[#0a0f16] dark:hover:border-cyan-400/30 dark:hover:bg-[#0c141d]"
+                className="group relative flex flex-col justify-between rounded-2xl border border-slate-200 bg-slate-50/70 p-4 min-[380px]:p-5 sm:p-6 transition-all duration-300 hover:-translate-y-1 hover:border-cyan-500/40 hover:bg-white hover:shadow-lg dark:border-white/10 dark:bg-[#0a0f16] dark:hover:border-cyan-400/30 dark:hover:bg-[#0c141d]"
               >
                 <div>
                   {/* Step Header */}
@@ -228,7 +228,7 @@ function PracticalTraining() {
         </div>
 
         {/* Bottom Callout & Direct Link */}
-        <div className="mt-10 flex flex-col gap-4 rounded-2xl border border-cyan-500/20 bg-cyan-500/5 p-6 sm:flex-row sm:items-center sm:justify-between dark:border-cyan-500/15 dark:bg-cyan-950/10">
+        <div className="mt-10 flex flex-col gap-4 rounded-2xl border border-cyan-500/20 bg-cyan-500/5 p-4 min-[380px]:p-6 sm:flex-row sm:items-center sm:justify-between dark:border-cyan-500/15 dark:bg-cyan-950/10">
           <div>
             <h4 className="font-bold text-slate-950 dark:text-white">
               Ready for real industrial cybersecurity training?

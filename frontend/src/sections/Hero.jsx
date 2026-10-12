@@ -26,18 +26,18 @@ function Hero() {
         {/* Left Column: Value Proposition & CTAs (7 cols) */}
         <div className="lg:col-span-7">
           {/* Eyebrow Badge */}
-          <div className="animate-hero-badge mb-6 inline-flex items-center gap-2.5 rounded-full border border-cyan-500/30 bg-cyan-500/5 px-4 py-1.5 backdrop-blur-xs dark:border-cyan-400/20 dark:bg-cyan-400/10">
-            <span className="relative flex h-2 w-2">
+          <div className="animate-hero-badge mb-6 inline-flex max-w-full items-center gap-2 sm:gap-2.5 rounded-full border border-cyan-500/30 bg-cyan-500/5 px-3 sm:px-4 py-1.5 backdrop-blur-xs dark:border-cyan-400/20 dark:bg-cyan-400/10">
+            <span className="relative flex h-2 w-2 shrink-0">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-cyan-400 opacity-75" />
               <span className="relative inline-flex h-2 w-2 rounded-full bg-cyan-500" />
             </span>
-            <span className="font-mono text-[11px] font-bold uppercase tracking-[0.2em] text-cyan-800 dark:text-cyan-300">
+            <span className="font-mono text-[10px] min-[380px]:text-[11px] font-bold uppercase tracking-[0.1em] min-[380px]:tracking-[0.2em] text-cyan-800 dark:text-cyan-300">
               Cyber Security Industrial Training &amp; Internship
             </span>
           </div>
 
           {/* Main Heading */}
-          <h1 className="animate-hero-heading text-4xl font-extrabold tracking-tight text-slate-950 sm:text-5xl lg:text-6xl dark:text-white">
+          <h1 className="animate-hero-heading text-3xl min-[380px]:text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-950 dark:text-white">
             Build Real-World{' '}
             <span className="relative inline-block text-cyan-600 dark:text-cyan-400">
               Cybersecurity
@@ -98,12 +98,12 @@ function Hero() {
           </div>
 
           {/* Core Trust Indicators / Quick Stats */}
-          <div className="animate-hero-trust mt-12 grid grid-cols-3 gap-2 sm:gap-6 border-t border-slate-200 pt-7 dark:border-white/10">
+          <div className="animate-hero-trust mt-10 sm:mt-12 grid grid-cols-3 gap-1.5 min-[380px]:gap-3 sm:gap-6 border-t border-slate-200 pt-6 sm:pt-7 dark:border-white/10">
             <div className="space-y-1">
-              <div className="text-xl min-[400px]:text-2xl sm:text-3xl font-black text-slate-950 dark:text-white">
+              <div className="text-lg min-[360px]:text-xl min-[400px]:text-2xl sm:text-3xl font-black text-slate-950 dark:text-white">
                 70%
               </div>
-              <p className="text-xs font-semibold text-slate-600 sm:text-sm dark:text-slate-400">
+              <p className="text-[11px] min-[360px]:text-xs font-semibold text-slate-600 sm:text-sm dark:text-slate-400">
                 Practical Labs
               </p>
               <p className="hidden text-[11px] text-slate-500 sm:block dark:text-slate-500">
@@ -112,10 +112,10 @@ function Hero() {
             </div>
 
             <div className="space-y-1">
-              <div className="text-xl min-[400px]:text-2xl sm:text-3xl font-black text-slate-950 dark:text-white">
+              <div className="text-sm min-[360px]:text-base min-[400px]:text-2xl sm:text-3xl font-black leading-tight text-slate-950 dark:text-white">
                 RED + BLUE
               </div>
-              <p className="text-xs font-semibold text-slate-600 sm:text-sm dark:text-slate-400">
+              <p className="text-[11px] min-[360px]:text-xs font-semibold text-slate-600 sm:text-sm dark:text-slate-400">
                 Dual Operations
               </p>
               <p className="hidden text-[11px] text-slate-500 sm:block dark:text-slate-500">
@@ -124,10 +124,10 @@ function Hero() {
             </div>
 
             <div className="space-y-1">
-              <div className="text-xl min-[400px]:text-2xl sm:text-3xl font-black text-slate-950 dark:text-white">
+              <div className="text-sm min-[360px]:text-base min-[400px]:text-2xl sm:text-3xl font-black leading-tight text-slate-950 dark:text-white">
                 AI-DRIVEN
               </div>
-              <p className="text-xs font-semibold text-slate-600 sm:text-sm dark:text-slate-400">
+              <p className="text-[11px] min-[360px]:text-xs font-semibold text-slate-600 sm:text-sm dark:text-slate-400">
                 Next-Gen Security
               </p>
               <p className="hidden text-[11px] text-slate-500 sm:block dark:text-slate-500">
@@ -265,8 +265,8 @@ function Hero() {
                 </div>
 
                 {/* Practical Ratio Pill */}
-                <div className="flex items-center justify-between rounded-xl border border-cyan-500/20 bg-cyan-500/5 px-4 py-2.5 text-xs">
-                  <div className="flex items-center gap-2 font-semibold text-slate-700 dark:text-slate-300">
+                <div className="flex flex-wrap items-center justify-between gap-2 rounded-xl border border-cyan-500/20 bg-cyan-500/5 px-3 sm:px-4 py-2.5 text-xs">
+                  <div className="flex flex-wrap items-center gap-1.5 sm:gap-2 font-semibold text-slate-700 dark:text-slate-300">
                     <span className="font-bold text-cyan-600 dark:text-cyan-400">
                       70% Lab Exposure
                     </span>
