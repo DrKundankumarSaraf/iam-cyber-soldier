@@ -137,7 +137,7 @@ function TrainingPlans({ onSelectPlan }) {
             >
               {/* Featured Badge */}
               {plan.featured && (
-                <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 rounded-full bg-cyan-400 px-2.5 sm:px-3.5 py-0.5 sm:py-1 text-[9px] min-[380px]:text-[10px] font-extrabold uppercase tracking-widest text-slate-950 shadow-md">
+                <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 rounded-full bg-cyan-400 px-2.5 sm:px-3.5 py-0.5 sm:py-1 text-[9px] min-[380px]:text-[10px] font-extrabold uppercase tracking-widest text-slate-950 shadow-md whitespace-nowrap">
                   {plan.featuredLabel}
                 </div>
               )}
@@ -146,7 +146,7 @@ function TrainingPlans({ onSelectPlan }) {
                 {/* Header: Track Badge, Plan Name & Duration */}
                 <div className="flex items-start justify-between gap-2">
                   <div>
-                    <span className="font-mono text-[11px] font-semibold uppercase tracking-wider text-cyan-700 dark:text-cyan-400">
+                    <span className="font-mono text-[10px] sm:text-[11px] font-semibold uppercase tracking-wider text-cyan-700 dark:text-cyan-400">
                       {plan.badge}
                     </span>
                     <h3 className="mt-1 text-2xl font-black text-slate-950 dark:text-white">
@@ -154,7 +154,7 @@ function TrainingPlans({ onSelectPlan }) {
                     </h3>
                   </div>
 
-                  <span className="shrink-0 rounded-full border border-slate-200 bg-slate-100 px-2.5 py-1 font-mono text-xs font-bold text-slate-700 dark:border-white/10 dark:bg-white/[0.05] dark:text-slate-300">
+                  <span className="shrink-0 rounded-full border border-slate-200 bg-slate-100 px-2 sm:px-2.5 py-0.5 sm:py-1 font-mono text-[11px] sm:text-xs font-bold text-slate-700 dark:border-white/10 dark:bg-white/[0.05] dark:text-slate-300">
                     {plan.duration}
                   </span>
                 </div>
@@ -170,7 +170,7 @@ function TrainingPlans({ onSelectPlan }) {
                 </div>
 
                 {/* Description */}
-                <p className="mt-3.5 sm:min-h-[56px] text-xs font-normal leading-relaxed text-slate-600 dark:text-slate-300">
+                <p className="mt-3.5 sm:min-h-[56px] lg:min-h-[64px] xl:min-h-[56px] text-xs font-normal leading-relaxed text-slate-600 dark:text-slate-300">
                   {plan.description}
                 </p>
 

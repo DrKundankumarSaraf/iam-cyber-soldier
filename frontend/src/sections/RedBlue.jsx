@@ -90,9 +90,9 @@ function RedBlue() {
                 {redTeamSkills.map((item) => (
                   <li
                     key={item}
-                    className="flex items-center gap-3 text-sm font-medium text-slate-700 dark:text-slate-300"
+                    className="flex items-start gap-2.5 sm:gap-3 text-sm font-medium text-slate-700 dark:text-slate-300"
                   >
-                    <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-red-500/10 text-red-600 dark:text-red-400">
+                    <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-red-500/10 text-red-600 dark:text-red-400">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 20 20"
@@ -159,9 +159,9 @@ function RedBlue() {
                 {blueTeamSkills.map((item) => (
                   <li
                     key={item}
-                    className="flex items-center gap-3 text-sm font-medium text-slate-700 dark:text-slate-300"
+                    className="flex items-start gap-2.5 sm:gap-3 text-sm font-medium text-slate-700 dark:text-slate-300"
                   >
-                    <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-cyan-500/10 text-cyan-600 dark:text-cyan-400">
+                    <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-cyan-500/10 text-cyan-600 dark:text-cyan-400">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 20 20"

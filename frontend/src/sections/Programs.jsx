@@ -316,7 +316,7 @@ function Programs({ onSelectProgram }) {
                   </div>
 
                   {/* Title */}
-                  <h3 className="mt-4 text-lg font-bold tracking-tight text-slate-950 transition-colors dark:text-white">
+                  <h3 className="mt-4 text-base sm:text-lg font-bold tracking-tight text-slate-950 transition-colors dark:text-white break-words">
                     {course.title}
                   </h3>
 
@@ -341,7 +341,7 @@ function Programs({ onSelectProgram }) {
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 20 20"
                         fill="currentColor"
-                        className="h-3.5 w-3.5 text-cyan-600 dark:text-cyan-400"
+                        className="h-3.5 w-3.5 shrink-0 text-cyan-600 dark:text-cyan-400"
                         aria-hidden="true"
                       >
                         <path d="M10.75 2.75a.75.75 0 0 0-1.5 0v8.614L6.295 8.235a.75.75 0 1 0-1.09 1.03l4.25 4.5a.75.75 0 0 0 1.09 0l4.25-4.5a.75.75 0 0 0-1.09-1.03l-2.955 3.129V2.75Z" />
@@ -355,7 +355,7 @@ function Programs({ onSelectProgram }) {
                       download
                       title={`Download original ${course.title} syllabus DOCX`}
                       aria-label={`Download original DOCX syllabus for ${course.title}`}
-                      className="inline-flex items-center justify-center rounded-lg border border-slate-300 bg-white px-2.5 py-1.5 text-[11px] font-semibold text-slate-700 transition hover:border-cyan-500 hover:text-cyan-700 dark:border-white/15 dark:bg-white/[0.04] dark:text-slate-300 dark:hover:border-cyan-400 dark:hover:text-cyan-300"
+                      className="inline-flex shrink-0 items-center justify-center rounded-lg border border-slate-300 bg-white px-2.5 py-1.5 text-[11px] font-semibold text-slate-700 transition hover:border-cyan-500 hover:text-cyan-700 dark:border-white/15 dark:bg-white/[0.04] dark:text-slate-300 dark:hover:border-cyan-400 dark:hover:text-cyan-300"
                     >
                       DOCX
                     </a>
